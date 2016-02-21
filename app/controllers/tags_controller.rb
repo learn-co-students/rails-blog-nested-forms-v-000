@@ -12,4 +12,8 @@ class TagsController < ApplicationController
     @tag = Tag.find(params[:id])
   end
 
+  #def new
+  #  @tag = Tag.new
+  #end
+
 end
