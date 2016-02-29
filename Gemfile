@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -35,6 +35,8 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 group :test, :development do
   gem "rspec-rails"
+  gem "pry-rails"
+  gem "learn-co"
   gem "capybara"
   gem "selenium-webdriver"
   gem "better_errors"
