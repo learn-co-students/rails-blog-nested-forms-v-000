@@ -1,4 +1,5 @@
 <%= form_for(@post) do |f| %>
+
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -10,7 +11,7 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
@@ -19,9 +20,17 @@
     Tags:
   </div>
 
+
   <div class="field">
     <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
   </div>
+
+  <div class="field">
+  <%= f.fields_for :tags do |tag| %>
+    <%= tag.label :name %><br>
+    <%= tag.text_field :name %><br>
+  <% end %>
+</div>
 
   <div class="actions">
     <%= f.submit %>
