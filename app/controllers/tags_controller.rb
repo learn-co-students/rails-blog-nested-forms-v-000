@@ -6,10 +6,17 @@ class TagsController < ApplicationController
     @tags = Tag.all
   end
 
+  def new 
+binding.pry
+    @tag = Tag.new
+  end
+  
   # GET /tags/1
   # GET /tags/1.json
   def show
     @tag = Tag.find(params[:id])
   end
+
+
 
 end
