@@ -5,4 +5,11 @@ class Post < ActiveRecord::Base
   has_many :tags, :through => :post_tags
 
   validates_presence_of :name, :content
+
+  def tags_attributes=(tags_attribute)
+    if tags_attribute.first.present?
+      self.tags.build(tags_attribute)
+    end
+  end
+
 end
