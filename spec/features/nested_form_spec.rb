@@ -11,7 +11,7 @@ describe 'nested form for tag in post', :type => :feature do
     expect(page).to have_content(@post1.name)
   end
 
-  it 'can create a post with a new tag' do 
+  it 'can create a post with a new tag' do
     visit 'posts/new'
     within(all('.field').first) do
       fill_in('Name', :with => @post1.name)
