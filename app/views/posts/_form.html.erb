@@ -24,11 +24,11 @@
   </div>
 
   <div class="field">
-  Create a New Tag:<br>
-  <%= f.fields_for :tags do |tag| %>
-  <%= tag.label :name %>
-  <%=tag.text_field :name %>
-  <%end%>
+      Create New Tag:<br>
+    <%= f.fields_for :tags do |tag| %>
+      <%= tag.label :name %>
+      <%= tag.text_field :name %>
+    <%end%>
   </div>
 
   <div class="actions">
