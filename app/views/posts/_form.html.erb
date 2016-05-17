@@ -25,8 +25,9 @@
 
   <div class="field">
 <!--    <%=  @post.tags.build  %>   -->
-    <%= f.fields_for :tag, @post.post_tags.build_tag do |t| %>
-    <%= t.text_field :name%>
+    <%= f.fields_for :tag_attributes, @post.tags.last do |t| %>
+    <%= t.label :"Name" %>
+    <%= t.text_field :name, :id => "Name" %>
 
     <% end %>
   </div>
