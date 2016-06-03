@@ -14,7 +14,9 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    # binding.pry
     @post = Post.new
+    @post.tags.build
   end
 
   # GET /posts/1/edit
