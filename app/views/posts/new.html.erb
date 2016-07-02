@@ -1,5 +1,17 @@
 <h1>New post</h1>
 
-<%= render 'form' %>
+<div class="field">
+  <%= form_for @post do |f| %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %><br>
+    <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
+    <%= f.fields_for :tags, @post.tags.build do |tag_fields| %>
+      New Category: <%= tag_fields.text_field :name %>
+    <% end %><br>
 
+    <%= f.submit %>
+  <% end %>
+</div>
 <%= link_to 'Back', posts_path %>
