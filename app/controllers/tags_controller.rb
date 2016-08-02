@@ -12,4 +12,16 @@ class TagsController < ApplicationController
     @tag = Tag.find(params[:id])
   end
 
+  def new
+    @tag = Tag.new
+  end
+
+  def create
+    @tag = Tag.create(tag_params)
+  end
+
+  def tag_params
+    params.require[:tag].permit[:name]
+  end
+
 end
