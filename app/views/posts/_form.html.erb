@@ -4,19 +4,27 @@
       <h2><%= pluralize(@post.errors.count, "error") %> prevents this post from being saved:</h2>
 
       <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
   <div class="field">
+
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
     <%= f.label :content %><br>
     <%= f.text_area :content %><br>
-    Tags:
+    Tags:   <%= f.collection_select :tag_ids, Tag.all, :id, :name, include_blank: 'Choose a tag here:' %>
+    Or create a new tag:
+    <%= f.hidden_field :post_tag_ids %>
+     <%= f.fields_for @post, @post.tags.last.build_tag do |tag_fields| %>
+       <%= tag_fields.text_field :name %>
+     <% end %>
+
+
   </div>
 
   <div class="field">
