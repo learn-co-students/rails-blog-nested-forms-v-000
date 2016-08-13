@@ -17,17 +17,16 @@
     <%= f.text_field :name %><br>
     <%= f.label :content %><br>
     <%= f.text_area :content %><br>
-    Tags:   <%= f.collection_select :tag_ids, Tag.all, :id, :name, include_blank: 'Choose a tag here:' %>
-    Or create a new tag:
-    <%= f.hidden_field :post_tag_ids %>
-     <%= f.fields_for @post, @post.tags.last.build_tag do |tag_fields| %>
-       <%= tag_fields.text_field :name %>
-     <% end %>
-
+</div>
+Tags:     <div class="field">
+       <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
+       <%= f.label "Create a New Tag"%>
+       <%= f.fields_for :tags, @post.tags.build do |tags_fields| %>
+         <%= tags_fields.text_field :name, id: "Name" %>
+       <% end %>
 
   </div>
 
-  <div class="field">
 
 
   <div class="actions">
