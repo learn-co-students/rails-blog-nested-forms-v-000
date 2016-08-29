@@ -9,8 +9,10 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :tags
 
   def tags_attributes=(tags_attributes)
-    tags_attributes.values.each do |tag_attribute|
-      self.tags << Tag.find_or_create_by(tag_attribute) if !tag_attribute.values.first.empty?
+    unless tags_attributes.first.empty?
+      tags_attributes.values.each do |tag_attribute|
+        self.tags << Tag.find_or_create_by(tag_attribute) if !tag_attribute.values.first.empty?
+      end
     end
   end
 end
