@@ -15,6 +15,8 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    # According to the rails doc it is advisable to add this code in the controller:
+    @post.tags.build
   end
 
   # GET /posts/1/edit
