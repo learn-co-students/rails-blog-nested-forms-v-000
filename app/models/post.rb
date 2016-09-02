@@ -6,4 +6,11 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :name, :content
   accepts_nested_attributes_for :tags , reject_if: proc { |attributes| attributes[:name].blank? }
+  # def tags_attributes=(tags_attributes)
+  #   tags_attributes.each do |i, tag_attributes|
+  #     if tag_attributes[:name] != ""
+  #       self.tags.build(tag_attributes)
+  #     end
+  #   end
+  # end
 end
