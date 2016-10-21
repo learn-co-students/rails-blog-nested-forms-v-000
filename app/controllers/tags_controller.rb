@@ -12,4 +12,8 @@ class TagsController < ApplicationController
     @tag = Tag.find(params[:id])
   end
 
+
+
+  # To allow a user to create a new tag, the controller action for a new tag should instantiate a new tag
+
 end
