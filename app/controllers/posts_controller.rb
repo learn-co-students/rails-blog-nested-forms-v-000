@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    #binding.pry
   end
 
   # GET /posts/new
@@ -27,6 +28,8 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     respond_to do |format|
       if @post.save
+        !params[:post][:tag][:name].blank? && @post.tags.create(name: params[:post][:tag][:name])
+        #binding.pry
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render action: 'show', status: :created, location: @post }
       else
@@ -68,6 +71,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:name, :content, :tag_ids => [])
+      params.require(:post).permit(:name, :content, :tag_ids => [], :tags_attributes => [:name])
     end
 end
