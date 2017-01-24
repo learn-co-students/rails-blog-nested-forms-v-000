@@ -24,11 +24,18 @@
   </div>
 
   <div class="field">
+    <%= f.fields_for :tags, @post.tags.build do |tag_fields| %>
+      <%= tag_fields.label :name %>
+      <%= tag_fields.text_field :name %>
+    <% end %>
+  </div>  
+
+<!--   <div class="field">
     <label>Add new tags</label><br>
     <input type="text" name="post[tag_attributes][]" ><br>
     <input type="text" name="post[tag_attributes][]" ><br>
     <input type="text" name="post[tag_attributes][]" ><br>
-  </div>  
+  </div>   -->
 
   <div class="actions">
     <%= f.submit %>
