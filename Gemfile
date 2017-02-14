@@ -44,3 +44,5 @@ group :test, :development do
   gem "sqlite3"
   gem "pry"
 end
+
+gem 'learn-co'
