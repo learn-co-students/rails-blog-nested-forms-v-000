@@ -19,16 +19,17 @@
     Tags: <% @tags.each do |tag| %>
             <%= tag.name %>
           <% end %>
-
-  <br /><br />Make a new tag:
-  <%= f.fields_for :tags, @post.tags.build do |tags_fields| %>
-    <%= tags_fields.text_field :name %>
-  <% end %>
   </div>
 
   List of tags:
   <div class="field">
+    <%= f.fields_for :tags, @post.tags.build do |tags_fields| %>
+      <%= tags_fields.label :name %>
+      <%= tags_fields.text_field :name %>
+    <% end %>
+
     <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
+    <br /><br />
   </div>
 
   <div class="actions">
