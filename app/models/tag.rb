@@ -3,4 +3,8 @@ class Tag < ActiveRecord::Base
   has_many :posts, :through => :post_tags
 
   validates_uniqueness_of :name
+
+  # def new
+  #   @tag = Tag.new
+  # end
 end
