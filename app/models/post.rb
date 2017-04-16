@@ -10,10 +10,7 @@ class Post < ActiveRecord::Base
 
   def tags_attributes=(tags_attributes)
     tags_attributes.each do |i, tag_attributes| #parses out the hashes if tags_attributes is either an array or a hash
-      if tag_attributes.present? && tag_attributes[:name].present? #checks for nil (e.g. tags_attributes = [{}])
-        tag = Tag.find_or_create_by(tag_attributes)
-        self.tags << tag if !self.tags.include?(tag)
-      end
+      self.tags.build(tag_attributes) if tag_attributes.present? && tag_attributes[:name].present? #checks for nil (e.g. 
     end
   end
 
