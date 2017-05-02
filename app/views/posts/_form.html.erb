@@ -24,8 +24,8 @@
   </div>
 
   <div class="field">
-    Create a new Tag:
-    <%= f.fields_for :tags, @post.tags.build do |tag_fields|%><br>
+    <%= f.label "Create a new Tag: " %>
+    <%= f.fields_for :tags do |tag_fields|%><br>
     <%= tag_fields.label :name %>
     <%= tag_fields.text_field :name %><br>
     <% end %>
