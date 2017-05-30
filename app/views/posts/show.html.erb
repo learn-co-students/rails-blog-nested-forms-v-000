@@ -11,6 +11,25 @@
     <li><%= tag.name %></li>
     <% end %>
   </ul>
+
+  <%= form_for @post do |f| %>
+
+    <div class="field">
+      <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
+    </div>
+
+    <div class="field">
+      <%= f.fields_for :tags, Tag.new do |tag_builder| %>
+      <%= tag_builder.label :name %>
+      <%= tag_builder.text_field :name %>
+    <% end %>
+    </div>
+
+
+    <%= f.submit 'Submit New Tag'%>
+  <% end %>
+
+
 </p>
 
 
