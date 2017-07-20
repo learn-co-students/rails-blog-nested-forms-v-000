@@ -20,7 +20,11 @@
   </div>
 
   <div class="field">
-    <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
+    <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %>
+    <%= f.fields_for(:tags, Tag.new) do |tf| %>
+      <%= tf.label :name %>
+      <%= tf.text_field :name %>
+    <% end %>
   </div>
 
   <div class="actions">
