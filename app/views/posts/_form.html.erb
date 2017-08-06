@@ -24,7 +24,7 @@
   </div>
 
   <div class="field">
-    <%= f.fields_for :tag_attributes do |attr| %>
+    <%= f.fields_for :tags do |attr| %>
       <%= attr.label :name %>
       <%= attr.text_field :name %>
     <% end %>
