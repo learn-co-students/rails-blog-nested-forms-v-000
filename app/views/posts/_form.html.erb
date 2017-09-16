@@ -29,9 +29,9 @@
   <div class="field">
     <ul>
       Create tag:
-      <%= f.fields_for :tags do |tag_builder| %>
-        <% tag_builder.label :name %>
-        <%= tag_builder.text_field :name %>
+      <%= f.fields_for :tags do |tag_forms| %>
+        <% tag_forms.label :name %>
+        <%= tag_forms.text_field :name %>
       <% end %>
     </ul>
   </div>
