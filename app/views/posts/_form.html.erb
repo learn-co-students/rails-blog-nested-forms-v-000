@@ -27,7 +27,7 @@
     <p>Create new tag</p>
     <%= f.fields_for :tags do |tags_form| %><br>
       <%= tags_form.label 'Name' %>
-      <%= tags_form.text_field :name, :id => 'Name' %>
+      <%= tags_form.text_field :name %>
     <% end %>
   </div>
 
