@@ -1,20 +1,5 @@
 <h1>New post</h1>
-<div class=field>
-  <%= form_for(@post) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br />
-    <%= f.label :content %>
-    <%= f.text_area :content %><br />
 
-      Select existing tags:
-      <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %>
+<%= render 'form' %>
 
-      <br /><br /> Make new tags:
-      <%= f.fields_for :tags, @post.tags.build do |t| %>
-        <%= t.text_field :name %>
-        <%= t.hidden_field :name, value: @post.id %>
-      <% end %>
-
-    <%= f.submit %>
-  <% end %>
-</div>
+<%= link_to 'Back', posts_path %>
