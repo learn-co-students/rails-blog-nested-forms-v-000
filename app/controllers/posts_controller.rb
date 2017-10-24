@@ -72,3 +72,6 @@ class PostsController < ApplicationController
       params.require(:post).permit(:name, :content, :tag_ids => [], tags_attributes: [:name])
     end
 end
+
+#*1=http://api.rubyonrails.org/v5.0/classes/ActionController/StrongParameters.html
+#*1=params.require(:person).permit(:name, :age, pets_attributes: [ :id, :name, :category ])
