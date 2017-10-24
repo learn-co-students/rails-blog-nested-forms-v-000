@@ -1,10 +1,3 @@
 <h1>New post</h1>
-
-<h3>Create a New Post with A New Tag</h3>
-<%= form_for @post.tags.build do |tag| %>
-<%= tag.hidden_field :post_id, value @post.id%>
-<%= tag.label :name %>
-<%= tag.text_field :name %>
-<% end %>
 <%= render 'form' %>
 <%= link_to 'Back', posts_path %>
