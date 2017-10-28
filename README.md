@@ -10,7 +10,7 @@ We're going to build off the previous iteration of our Blog App, where we create
 2. We also need an `accepts_nested_attributes_for` macro on our `Post` model, which will permit tags to be nested in our new `Post` form.
 3. Now we can build a nested form in our `Post` form. Check out the documentation on [Nested Forms](http://guides.rubyonrails.org/form_helpers.html#nested-forms) for help.
 4. We should be able to select previously created tags as well as create a new tag.
-5. Remember, because we have a uniqueness validation on the name of tag, we will need to account for that; a user shouldn't have to submit a new tag every time they submit a post.
+5. Remember, because we have a uniqueness validation on the name of tag, we will need to account for that; a user shouldn't have to submit a new tag every time they submit a post. In addition, we don't want to create blank tags. The Post model should be edited similar to the example code below to protect against both.
 
   ```ruby
   class User < ActiveRecord::Base
