@@ -7,7 +7,6 @@
   <%= @post.content %>
   <h3>Tags:</h3>
   <ul>
-    <%= binding.pry %>
     <% @post.tags.each do |tag| %>
     <li><%= tag.name %></li>
     <% end %>
