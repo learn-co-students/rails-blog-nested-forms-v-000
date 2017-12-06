@@ -9,8 +9,8 @@ class Post < ActiveRecord::Base
 
 
     def tags_attributes=(tag_hash)
-    if tag_hash[:name].present?
-      tag = Tag.find_or_create_by(name: tag_hash[:name])
+      if tag_hash.none? {|tag| tag.blank?}
+        tag = Tag.find_or_create_by(name: tag_hash[:name])
       if !self.tags.include?(tag) 
         self.post_tags.build(:tag => tag)
       end
