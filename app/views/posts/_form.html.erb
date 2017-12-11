@@ -24,9 +24,9 @@
   </div>
 
   <div class="field">
-    <%= f.fields_for :tags, @post.tags.build do |tags_fields| %>
-      <%= tags_fields.label :name %><br>
-      <%= tags_fields.text_field :name %>
+    <%= f.fields_for(:tags) do |tag_form| %>
+      <%= tag_form.label :name %>
+      <%= tag_form.text_field :name %>
     <% end %>
   </div>
 
