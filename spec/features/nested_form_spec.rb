@@ -17,8 +17,9 @@ describe 'nested form for tag in post', :type => :feature do
       fill_in('Name', :with => @post1.name)
       fill_in('Content', :with => @post1.content)
     end
+    binding.pry
     within(all('.field').last) do
-      fill_in('Name', :with => "witty")
+      fill_in('post_tags_attributes_0_name', :with => "witty")
     end
     click_button('Create Post')
     expect(page).to have_content("witty")
