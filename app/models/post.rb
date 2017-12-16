@@ -7,5 +7,5 @@ class Post < ActiveRecord::Base
   validates_presence_of :name, :content
 
   ##
-  accepts_nested_attributes_for :tags, reject_if: lambda {|attributes| attributes['name'].blank?}
+  accepts_nested_attributes_for :tags, reject_if: proc {|attributes| attributes['name'].blank?}
 end
