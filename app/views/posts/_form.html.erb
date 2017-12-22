@@ -12,19 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %><br>
-    <%= f.label :content %><br>
-    <%= f.text_area :content %><br>
-    Tags:
+    <p>
+    <%= f.label :name, "Name:" %>
+    <%= f.text_field :name %>
+    </p>
+
+    <p>
+    <%= f.label :content, "Content:" %>
+    <%= f.text_area :content %>
+    </p>
   </div>
+
+  <h4> Tags: </h4>
 
   <div class="field">
     <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
   </div>
 
+  <div class="field">
+    <%= f.fields_for :tags do |tag_attributes| %>
+      <%= tag_attributes.label :name, "Tag Name:" %>
+      <%= tag_attributes.text_field :name %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
-
 <% end %>
