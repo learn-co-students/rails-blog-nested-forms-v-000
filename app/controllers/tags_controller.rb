@@ -11,5 +11,13 @@ class TagsController < ApplicationController
   def show
     @tag = Tag.find(params[:id])
   end
+  
+  def new 
+    binding.pry
+  end 
+  
+  def create 
+    binding.pry
+  end 
 
 end
