@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
+
   # GET /posts
   # GET /posts.json
   def index
@@ -15,6 +16,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    # @tag = @post.tags.build # I added
   end
 
   # GET /posts/1/edit
@@ -24,6 +26,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+    raise params.inspect
     @post = Post.new(post_params)
     respond_to do |format|
       if @post.save
@@ -68,6 +71,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:name, :content, :tag_ids => [])
+      params.require(:post).permit(:name, :content, :tag_ids => [], :tag_attributes => [:name]) # I added last one
     end
 end
