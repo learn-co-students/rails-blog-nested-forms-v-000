@@ -39,6 +39,9 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    # raise params.inspect
+    # "post"=>{ "name"=>"Pirates of the Carribeans", "content"=>"Jack Sparrow approves this message.", "tag_ids"=>[""]}, "tag_attributes"=>["Magic", "Book", ""]
+    # "post"=>{ "name"=>"Star Wars", "content"=>"A long time ago, a Jedi Story", "tag_ids"=>["3", "4", ""], "tags"=>{"name"=>"Mongo"} }
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -68,6 +71,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:name, :content, :tag_ids => [])
+      params.require(:post).permit(:name, :content, tag_ids: [], tags_attributes: [:name])
     end
 end
