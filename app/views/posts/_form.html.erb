@@ -20,7 +20,16 @@
   </div>
 
   <div class="field">
+    <p>Choose an existing tag:</p>
     <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
+  </div>
+
+  <div class="field">
+    <p>Or, create a new tag:</p>
+    <%= f.fields_for :tags do |tag_attribute| %>
+      <%= tag_attribute.label :name %>
+      <%= tag_attribute.text_field :name %>
+    <% end %>
   </div>
 
   <div class="actions">
