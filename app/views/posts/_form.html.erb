@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
@@ -19,8 +20,17 @@
     Tags:
   </div>
 
+  <h2>Choose a Tag For This Post:</h2>
   <div class="field">
     <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
+  </div>
+
+  <h2>OR Create a New Tag:</h2>
+  <div class="field">
+    <%= f.fields_for(:tags) do |tag| %>
+      <%= tag.label :name %>
+      <%= tag.text_field :name %>
+    <% end %>
   </div>
 
   <div class="actions">
