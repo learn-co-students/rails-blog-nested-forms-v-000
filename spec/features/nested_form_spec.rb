@@ -17,6 +17,7 @@ describe 'nested form for tag in post', :type => :feature do
       fill_in('Name', :with => @post1.name)
       fill_in('Content', :with => @post1.content)
     end
+    
     within(all('.field').last) do
       fill_in('Name', :with => "witty")
     end
