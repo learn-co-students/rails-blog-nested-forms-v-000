@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+
   end
 
   # GET /posts/new
@@ -25,7 +26,12 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+  #raise post_params.inspect
+    #if !post_params[:tags_attributes][:name].present?
+    #  post_params.delete(:tags_attributes)
+    #end
     @post = Post.new(post_params)
+
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
