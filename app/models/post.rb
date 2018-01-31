@@ -8,14 +8,14 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :tags, :reject_if => :all_blank
 
 
-  def tags_attributes=(tag_attributes)
-    tag_attributes.each do |name, tag_attribute|
-      tag = Tag.find_or_create_by(name: tag_attribute)
-      unless tag.nil?
-        self.tags << tag
-      end
-    end
-  end
+  # def tags_attributes=(tag_attributes)
+  #   tag_attributes.each do |name, tag_attribute|
+  #     tag = Tag.find_or_create_by(name: tag_attribute)
+  #     unless tag.nil?
+  #       self.tags << tag
+  #     end
+  #   end
+  # end
 
   # def update_tag_ids
   #   new = self.tag_ids.uniq
