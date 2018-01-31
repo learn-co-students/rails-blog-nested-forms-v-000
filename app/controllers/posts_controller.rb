@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    raise params.inspect
+    # raise params.inspect
     respond_to do |format|
         if @post.update(post_params)
           format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -84,7 +84,7 @@ class PostsController < ApplicationController
       if chose_existing_tag?
         params.require(:post).permit(:name, :content, tag_ids: [])
       else
-        params.require(:post).permit(:name, :content, :tags_attributes => [:name])
+        params.require(:post).permit(:name, :content, tags_attributes: [:name])
       end
     end
 end
