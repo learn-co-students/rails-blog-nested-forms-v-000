@@ -81,10 +81,10 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      if chose_existing_tag?
-        params.require(:post).permit(:name, :content, tag_ids: [])
+      if !chose_existing_tag?
+        params.require(:post).permit(:name, :content, :tags_attributes => [:name])
       else
-        params.require(:post).permit(:name, :content, tags_attributes: [:name])
+        params.require(:post).permit(:name, :content, tag_ids: [])
       end
     end
 end
