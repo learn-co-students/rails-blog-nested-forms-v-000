@@ -69,22 +69,9 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
-    def chose_existing_tag?
-      @tag_ids = []
-      params[:post][:tag_ids].each {|id| @tag_ids << id if id != "" }
-      if @tag_ids.size > 0
-        true
-      else
-        false
-      end
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      if !chose_existing_tag?
-        params.require(:post).permit(:name, :content, :tags_attributes => [:name])
-      else
-        params.require(:post).permit(:name, :content, tag_ids: [])
-      end
+      params.require(:post).permit(:name, :content, tag_ids: [], :tags_attributes => [:name, :_destroy])
     end
+
 end
