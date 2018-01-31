@@ -6,11 +6,11 @@
   <h3>Content:</h3>
   <%= @post.content %>
   <h3>Tags:</h3>
-  <ul>
+  <ol>
     <% @post.tags.each do |tag| %>
     <li><%= tag.name %></li>
     <% end %>
-  </ul>
+  </ol>
 </p>
 
 
