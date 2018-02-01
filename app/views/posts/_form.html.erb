@@ -11,20 +11,42 @@
     </div>
   <% end %>
 
-  <div class="field">
+
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
+
     <%= f.label :content %><br>
     <%= f.text_area :content %><br>
+  
+ 
+    <%= f.fields_for :tags do |tag| %>
+     
+        <%= tag.label :tag %>
+        <%= tag.text_area :name %>
+ 
+    <% end %>
+ 
+
+******
+
     Tags:
-  </div>
+ 
 
-  <div class="field">
-    <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
-  </div>
+<ul>
+  <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |b| %>
+  <li>
+    <%= b.label %>
+    <%= b.check_box %>
+  
+  </li>
+    <% end %>
+</ul>
+ 
+ # create new tag 
+  
+   
 
-  <div class="actions">
+
     <%= f.submit %>
-  </div>
 
 <% end %>
