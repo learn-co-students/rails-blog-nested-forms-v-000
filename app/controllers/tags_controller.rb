@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
-
+  accepts_nested_attributes_for :tags
   # GET /tags
   # GET /tags.json
   def index
