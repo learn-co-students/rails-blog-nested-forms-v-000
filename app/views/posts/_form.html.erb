@@ -24,11 +24,11 @@
   </div>
 
   <div class="field">
-  <%= f.fields_for :tags, @post.tags.build do |tag_field| %>
-    <p><%= tag_field.label :name %></p>
-    <p><%= tag_field.text_field :name %></p>
-  <% end %>
-</div>
+    <%= f.fields_for :tags, @post.tags.build do |tag_field| %>
+      <p><%= tag_field.label :name %></p>
+      <p><%= tag_field.text_field :name %></p>
+    <% end %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
