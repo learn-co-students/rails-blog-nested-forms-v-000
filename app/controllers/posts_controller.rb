@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @tags = @post.tags.build
   end
 
   # GET /posts/1
@@ -68,6 +69,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:name, :content, :tag_ids => [])
+      params.require(:post).permit(:name, :content, :tag_ids => [], :tags_attributes => [:name])
     end
 end
