@@ -12,28 +12,26 @@
   <% end %>
 
 
-    <%= f.label :name, "Name" %><br>
+    <%= f.label :name %><br>
     <%= f.text_field :name %><br>
 
     <%= f.label :content %><br>
     <%= f.text_area :content %><br>
   
  
- FIX THIS -- only old tags, says I have to create a new tag 
     <%= f.fields_for :tags do |tag| %>
      
-        <%= tag.label :name, "Create a New Tag" %>
+        <%= tag.label :name %>
         <%= tag.text_field :name %>
     <% end %>
     
 
-    
+
     <br />
-    <%= f.label :name, "Choose a Tag:" %>  
+    <%= f.label :name %>  
       <p>
-      <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |b| %>
-       <%= b.label %>   <%= b.check_box %>
-    <% end %>
+      <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) %>
+
     </p>
 
 
