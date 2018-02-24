@@ -10,11 +10,13 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post = set_post
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    @tags = @post.tags.build
   end
 
   # GET /posts/1/edit
@@ -24,7 +26,6 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    raise params.inspect 
     @post = Post.new(post_params)
     respond_to do |format|
       if @post.save
