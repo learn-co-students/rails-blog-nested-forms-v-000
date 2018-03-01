@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+#binding.pry
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -67,7 +68,9 @@ class PostsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    # tag_ids added to allow the checkboxes on the new post view screen to allow multiple existing tags to be selected and passed to params
+    # tags_attributes added to allow new tags to be created at the point and time of creating a new post
     def post_params
-      params.require(:post).permit(:name, :content, :tag_ids => [])
+      params.require(:post).permit(:name, :content, :tag_ids => [], tags_attributes: [:name])
     end
 end
