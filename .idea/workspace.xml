@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fa561ca-3c89-451e-a860-9eb7b5fc3dd9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/controllers/posts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/posts_controller.rb" />
       <change beforePath="$PROJECT_DIR$/app/models/post.rb" afterPath="$PROJECT_DIR$/app/models/post.rb" />
+      <change beforePath="$PROJECT_DIR$/spec/models/post_spec.rb" afterPath="$PROJECT_DIR$/spec/models/post_spec.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -21,7 +21,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="schema.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="schema.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/schema.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-313">
@@ -34,8 +34,18 @@
       <file leaf-file-name="post.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/post.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+            <state relative-caret-position="315">
+              <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tag.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/tag.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -44,8 +54,8 @@
       <file leaf-file-name="post_spec.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/models/post_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -71,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="posts_controller.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="posts_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/posts_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+            <state relative-caret-position="413">
+              <caret line="71" column="66" lean-forward="false" selection-start-line="71" selection-start-column="66" selection-end-line="71" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -101,16 +111,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="seeds.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/seeds.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -130,8 +130,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/views/posts/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/post.rb" />
         <option value="$PROJECT_DIR$/app/controllers/posts_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/post.rb" />
+        <option value="$PROJECT_DIR$/spec/models/post_spec.rb" />
       </list>
     </option>
   </component>
@@ -387,12 +388,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1520181954192</updated>
-      <workItem from="1520181955996" duration="3016000" />
+      <workItem from="1520181955996" duration="3336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3016000" />
+    <option name="totallyTimeSpent" value="3336000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="9" y="5" width="1660" height="1043" extended-state="0" />
@@ -469,22 +470,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/features/nested_form_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-313">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/posts/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
@@ -493,7 +478,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/posts_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="71" column="66" lean-forward="false" selection-start-line="71" selection-start-column="66" selection-end-line="71" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/features/nested_form_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spec/models/post_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/tag.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -503,16 +512,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/post.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        <state relative-caret-position="315">
+          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/posts_controller.rb">
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+        <state relative-caret-position="-313">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

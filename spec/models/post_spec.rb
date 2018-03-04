@@ -8,9 +8,9 @@ describe Post do
           Post.create(
             name: 'post',
             content: 'post',
-            tags_attributes: [
+            tags_attributes:
               {}
-            ]
+
           )
         }.not_to change(Tag, :count)
       end
