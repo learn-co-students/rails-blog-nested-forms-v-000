@@ -23,6 +23,14 @@
     <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
   </div>
 
+  <div class="field">
+    <%= f.fields_for(:tags) do |tag| %>
+      <%= tag.label :name %>
+      <%= tag.text_field :name %>
+    <% end %>
+    <input type="hidden" name="tag[post_id]" value="<%= @post.id %>">
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
