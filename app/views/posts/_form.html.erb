@@ -21,12 +21,13 @@
   <div class="field">
     Tags:
     Select existing tags: <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br><br>
-</div>
+  </div>
 
-<div class="field">
+  <div class="field">
     and/or create a new tag:<br>
     <%= f.fields_for :tags do |tag_builder| %>
-      Name: <%= tag_builder.text_field :name %>
+      <%= tag_builder.label :name %>
+      <%= tag_builder.text_field :name %>
     <% end %>
   </div>
 
