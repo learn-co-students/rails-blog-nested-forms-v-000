@@ -16,11 +16,19 @@
     <%= f.text_field :name %><br>
     <%= f.label :content %><br>
     <%= f.text_area :content %><br>
-    Tags:
   </div>
 
   <div class="field">
-    <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
+    Tags:
+    Select existing tags: <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br><br>
+  </div>
+
+  <div class="field">
+    and/or create a new tag:<br>
+    <%= f.fields_for :tags do |tag_builder| %>
+      <%= tag_builder.label :name %>
+      <%= tag_builder.text_field :name %>
+    <% end %>
   </div>
 
   <div class="actions">
