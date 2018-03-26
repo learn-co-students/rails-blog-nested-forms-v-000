@@ -1,21 +1,27 @@
 <h1>New post</h1>
 
 <%= form_for @post do |f| %>
-  <%= f.label "Name" %>
+  <div class="field">
+  <%= f.label :name %>
   <%= f.text_field :name %>
+  
   <br><br>
 
-  <%= f.label "Content" %>
+  
+  <%= f.label :content %>
   <%= f.text_area :content %>
+  </div>
   <br><br>
 
   <%= f.label "Choose an already existing tag" %>
   <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %>
   <br>
+
   <%= f.label "Or Create a New Tag" %>
-  <%= f.fields_for :tags, Tag.new do |tag_builder| %>
+  <div class="field"><%= f.fields_for :tags do |tag_builder| %>
+    <%= tag_builder.label :name %>
     <%= tag_builder.text_field :name %>
-  <% end %>
+  <% end %></div>
 
   <%= f.submit %>
 <% end %>

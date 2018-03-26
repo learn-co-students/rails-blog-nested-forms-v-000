@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
-    2.times { @post.tags.build}
+    @post.tags.build
   end
 
   # GET /posts/1/edit
