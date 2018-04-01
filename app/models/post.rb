@@ -6,14 +6,5 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :name, :content
 
-  accepts_nested_attributes_for :tags
-
-  def tags_attributes=(tag_attributes)
-    if tag_attributes.include?("0") && tag_attributes["0"][:name] != ""
-      tag_attributes.each do |i, tag_attribute|
-        tag = Tag.find_or_create_by(tag_attribute)
-        self.tags << tag
-      end
-    end
-  end
+  accepts_nested_attributes_for :tags, reject_if: lambda {|attributes| attributes['name'].blank?}
 end
