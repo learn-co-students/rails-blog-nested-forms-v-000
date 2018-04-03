@@ -1,3 +1,4 @@
+
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -16,11 +17,24 @@
     <%= f.text_field :name %><br>
     <%= f.label :content %><br>
     <%= f.text_area :content %><br>
-    Tags:
   </div>
 
   <div class="field">
-    <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
+    Tags:
+    Select existing tags: <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br><br>
+  </div>
+
+  <!-- <div class="field">
+    <label for="post_tags_attributes_0_name">Name</label>
+    <input type="text" name="post[tags_attributes][0][name]" value="post_tags_attributes_0_name">
+  </div> -->
+
+  <div class="field">
+    New Tag:<br>
+    <%= f.fields_for :tags do |new_tag| %>
+      <%= new_tag.label :name %>
+      <%= new_tag.text_field :name %>
+    <% end %>
   </div>
 
   <div class="actions">
