@@ -16,7 +16,6 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @post.tags.build
-
   end
 
   # GET /posts/1/edit
@@ -26,10 +25,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-
-
     @post = Post.new(post_params)
-    binding.pry
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
