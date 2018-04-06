@@ -6,6 +6,12 @@ class TagsController < ApplicationController
     @tags = Tag.all
   end
 
+  def create
+    tag = Tag.new(tag_params)
+
+   
+
+  end
   # GET /tags/1
   # GET /tags/1.json
   def show
