@@ -1,0 +1,16 @@
+<h1>This is an Index of all the Sparrows</h1>
+<h2>
+  <ol>
+    <% @sparrows.each do |sparrow| %>
+      <li>
+        <%= link_to sparrow.name, sparrow_path(sparrow) %>
+          <ol>
+            <% sparrow.nests.each do |nest| %>
+              <h3><li><%= nest.location %> </li></h3>
+            <% end %>
+          </ol>
+      </li>
+      <br><br><br>
+    <% end %>
+  </ol>
+</h2>
