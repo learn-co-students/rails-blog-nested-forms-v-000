@@ -1,0 +1,58 @@
+<h1>This is the New Sparrow Form</h1>
+
+<%= form_for(@sparrow) do |f| %>
+  <% if @sparrow.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sparrow.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @sparrow.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :species %><br>
+    <%= f.text_area :species %><br>
+  </div>
+
+  <div class="field">
+    Please Select multiple nests from these options:<br>
+    <%= f.collection_check_boxes :nest_ids, Nest.all, :id, :location %><br>
+  </div>
+
+<!-- Parameters for working check boxes abovr:
+{ "utf8"=>"✓",
+  "authenticity_token"=>"dl/Uo8kzmtnnDu44PbYv1Fad7mYigZo1DD2NwS8DC5Ew0nKA/qVih0iH7+66YBuf+0caPY/eHl+kFUcbz472Sg==",
+  "sparrow"=>{"name"=>"Z", "species"=>"X", "nest_ids"=>""},
+  "commit"=>"Create Sparrow",
+  "controller"=>"sparrows",
+  "action"=>"create"
+}
+     Parameters from broken collection-select below:
+{ "utf8"=>"✓",
+  "authenticity_token"=>"quHNRINB+v6OIV89fTRmdwvkJbZegEuEwFUr5GWQUKjsbGtntNcCoCGoXuv64lI8pj7R7fPfz+5ofeE+hR2tcw==",
+  "sparrow"=>{"name"=>"Za", "species"=>"zxc", "nest_ids"=>"9"},
+  "commit"=>"Create Sparrow",
+  "controller"=>"sparrows",
+  "action"=>"create"
+}
+
+-->
+
+  <div class="field">
+    Or Select one of these nests from a dropdown menu:<br>
+    <!--f.collection_select :nest_ids, Nest.all, :id, :location, include_blank: "Choose a Nest" --><br>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+<% end %>
