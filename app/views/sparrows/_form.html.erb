@@ -22,37 +22,24 @@
 
   <div class="field">
     Please Select multiple nests from these options:<br>
-    <%= f.collection_check_boxes :nest_ids, Nest.all, :id, :location %><br>
+    <!-- This is how you would build the checkboxed with form builders -->
+    <!-- # f.collection_check_boxes :nest_ids, Nest.all, :id, :location -->
+
+    <!-- This is how you would start out in HTML to do the same thing -->
+    <% Nest.all.each do |n| %>
+      <p>
+        <label for="nest_id_<%= n.id %>"><%= n.location %></label>
+        <input type="checkbox" name="sparrow[nest_ids][]" value="<%= n.id %>" id="nest_id_<%= n.id %>">
+      </p>
+    <% end %>
   </div>
 
-<!-- Parameters for working check boxes abovr:
-{ "utf8"=>"✓",
-  "authenticity_token"=>"dl/Uo8kzmtnnDu44PbYv1Fad7mYigZo1DD2NwS8DC5Ew0nKA/qVih0iH7+66YBuf+0caPY/eHl+kFUcbz472Sg==",
-  "sparrow"=>{"name"=>"Z", "species"=>"X", "nest_ids"=>""},
-  "commit"=>"Create Sparrow",
-  "controller"=>"sparrows",
-  "action"=>"create"
-}
-     Parameters from broken collection-select below:
-{ "utf8"=>"✓",
-  "authenticity_token"=>"quHNRINB+v6OIV89fTRmdwvkJbZegEuEwFUr5GWQUKjsbGtntNcCoCGoXuv64lI8pj7R7fPfz+5ofeE+hR2tcw==",
-  "sparrow"=>{"name"=>"Za", "species"=>"zxc", "nest_ids"=>"9"},
-  "commit"=>"Create Sparrow",
-  "controller"=>"sparrows",
-  "action"=>"create"
-}
-
--->
-
-  <div class="field">
-    Or Select one of these nests from a dropdown menu:<br>
-    <!--f.collection_select :nest_ids, Nest.all, :id, :location, include_blank: "Choose a Nest" --><br>
-  </div>
-
+  <!-- Here is how you would insert some text_field(s) without form helpers -->
+  <input type="text" id="sparrow_nest_attributes_0_location" name="sparrow[nest_attributes][0][location]" />
+  <input type="text" id="sparrow_nest_attributes_1_location" name="sparrow[nest_attributes][1][location]" />
 
   <div class="actions">
     <%= f.submit %>
   </div>
-
 
 <% end %>

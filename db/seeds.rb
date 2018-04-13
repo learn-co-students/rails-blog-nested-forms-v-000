@@ -67,3 +67,8 @@ NestMaterial.create(nest_id: 2, material_id: 4)
 NestMaterial.create(nest_id: 3, material_id: 5)
 NestMaterial.create(nest_id: 3, material_id: 2)
 NestMaterial.create(nest_id: 3, material_id: 3)
+
+Nest.create(location: "Qormu")
+Nest.create(location: "Valetta")
+Nest.create(location: "Siggiewi")
+Nest.create(location: "Zebbug")

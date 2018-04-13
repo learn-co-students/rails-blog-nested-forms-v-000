@@ -12,6 +12,7 @@ class SparrowsController < ApplicationController
   end
 
   def create
+    # raise params.inspect
     @sparrow = Sparrow.new(sparrow_params)
     respond_to do |format|
       if @sparrow.save
