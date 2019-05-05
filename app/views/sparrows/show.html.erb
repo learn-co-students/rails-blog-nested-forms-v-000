@@ -1,0 +1,18 @@
+<h1>A Sparrow named <%= @sparrow.name %> has the following nests:</h1>
+
+<h2>
+  <ol>
+    <% @sparrow.nests.each do |nest| %>
+      <li>
+        A nest located in <%= nest.location %> has the following eggs
+        <% nest.eggs.each do |egg| %>
+        <ul>
+          <li><%= egg.color %></li>
+        </ul>
+        <% end %>
+      </li>
+
+    <% end %>
+  </ol>
+  <%= link_to "List of Sparrows", sparrows_path %>
+</h2>
