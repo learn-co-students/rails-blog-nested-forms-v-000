@@ -20,7 +20,14 @@
   </div>
 
   <div class="field">
-    <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
+    <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name,{include_blank: ""} %><br>
+  </div>
+
+  <div class="field">
+    <%= f.fields_for :tags do |t| %><br>
+      <%= t.label :name %>
+      <%= t.text_field :name %>
+    <% end %>
   </div>
 
   <div class="actions">
