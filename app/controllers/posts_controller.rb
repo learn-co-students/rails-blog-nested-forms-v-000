@@ -60,6 +60,14 @@ class PostsController < ApplicationController
     end
   end
 
+
+  def tags_attributes=(tags_attributes)
+    tags_attributes.values.each do |tags_attribute|
+      tag = Tag.find_or_create_by(tags_attribute)
+      self.tags << tag 
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -68,6 +76,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:name, :content, :tag_ids => [])
+      params.require(:post).permit(:name, :content, :tag_ids => [], :tags_attributes => [:name])
     end
 end
