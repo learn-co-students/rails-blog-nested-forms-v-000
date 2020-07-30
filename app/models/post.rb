@@ -5,4 +5,15 @@ class Post < ActiveRecord::Base
   has_many :tags, :through => :post_tags
 
   validates_presence_of :name, :content
+
+  def tags_attributes=(tag_attributes)
+    tag_attributes.each do|i, tag_attribute|
+      if tag_attribute && tag_attribute[:name].present?
+        tag = Tag.find_or_create_by(tag_attribute)
+        if !self.tags.include?(tag)
+          self.post_tags.build(:tag => tag)
+        end
+      end
+    end
+  end
 end
