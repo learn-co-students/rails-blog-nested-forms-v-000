@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit]
+  accepts_nested_attributes_for :posts, reject_if: proc { |attributes| attributes['title'].blank? }
 
   # GET /users
   # GET /users.json
